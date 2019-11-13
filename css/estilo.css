@@ -1,0 +1,20 @@
+h1
+{
+    color: rgb(136, 9, 9);
+    font-weight: bold;
+}
+
+#tituloform
+{
+    font-style: italic;
+}
+
+.esverdeado
+{
+    background-color: lightgreen;
+}
+
+body
+{
+background-image: url("../imagens/samuca.jpg")
+}
