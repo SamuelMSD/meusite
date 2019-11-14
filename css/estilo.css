@@ -3,8 +3,11 @@ body{
    color: #555;
 }
 .corpo{
+    position: relative;
     width: 1000px;
-    margin: auto;
+    left: 100%;
+    margin-left: -500px;
+    margin-top: 150px;
 }
 
 .conteudo{
@@ -12,7 +15,7 @@ body{
 }
 .imagem{
     display: table-cell;
-    float: left;
+    
 }
 .texto{
     display: table-cell;
