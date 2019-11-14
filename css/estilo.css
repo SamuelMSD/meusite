@@ -1,20 +1,21 @@
-h1
-{
-    color: rgb(136, 9, 9);
-    font-weight: bold;
+body{
+   background: #f1f1f1;
+   color: #555;
+}
+.corpo{
+    width: 1000px;
+    margin: auto;
 }
 
-#tituloform
-{
-    font-style: italic;
+.conteudo{
+    display: table;
 }
-
-.esverdeado
-{
-    background-color: lightgreen;
+.imagem{
+    display: table-cell;
+    float: left;
 }
-
-body
-{
-background-image: url("../imagens/samuca.jpg")
+.texto{
+    display: table-cell;
+    float: left;
+    width: 300px;
 }
