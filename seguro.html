@@ -15,12 +15,20 @@
     <script charset="utf-8"  src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
     <script src="javascript/abi.js"></script>    
     <script>
+        var status;
+        var campoStatus = document.getElementById("campoStatus"); 
         var enderecoContrato = "0x891710b3475b3076Dd1F9C6a6A9b1f87BA5e0517";
         var provedor = ethers.getDefaultProvider('rinkeby');
         var contrato = new ethers.Contract(enderecoContrato, abiContrato, provedor);
-        var status = contrato.statusPagamentoAluguel();
-        var campoStatus = document.getElementById("campoStatus");
-        campoStatus.innerHTML = status;
+        contrato.statusPagamentoAluguel()
+            .then( (resultado) => {
+                campoStatus.innerHTML = resultado;
+            })
+            .catch( (err) => {
+                console.error(err);
+                campoStatus.innerHTML = err;
+            });                     
+        }();
     </script>
 </script>
 </body>
