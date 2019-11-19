@@ -20,7 +20,7 @@
         var contrato = new ethers.Contract(enderecoContrato, abiContrato, provedor);
         var status = contrato.statusPagamentoAluguel();
         var campoStatus = document.getElementById("campoStatus");
-        campoStatus.innerHTML(status);
+        campoStatus.innerHTML = status;
     </script>
 </script>
 </body>
