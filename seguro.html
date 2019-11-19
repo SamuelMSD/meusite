@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seguro Fiança</title>
+</head>
+<body>
+    <h1>Seguro Fiança</h1>
+    <h2>Status do Contrato</h2>
+    <div>O contrato é: 0x806D6b6725A21409B2FFF7B1D079a4c4c5EA8AD1</div>
+    <div>A situação de pagamento é</div>
+    <h3 id="campoStatus">&nbsp;</h3>
+    <script charset="utf-8"  src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
+    <script src="javascript/abi.js"></script>
+    <script src="javascript/blockchain.js"></script>
+    <script>
+        var enderecoContrato = "0x806D6b6725A21409B2FFF7B1D079a4c4c5EA8AD1";
+        var provedor = ethers.getDefaultProvider('rinkeby');
+        var contrato = new ethers.Contract(enderecoContrato, abiContrato, provedor);
+        var status = contrato.statusPagamentoAluguel();
+        var campoStatus = document.getElementById("campoStatus");
+        campoStatus.innerHTML(status);
+    </script>
+</script>
+</body>
+</html>
