@@ -1,4 +1,4 @@
-var enderecoContrato = "0x536CE878870Fc1a8E5AEf025E1A473955db6183b";
+var enderecoContrato = "0x53C34f4897a4111f9299a9b734aD1d5c380a8Ce5";
 var provedor = new ethers.providers.Web3Provider(web3.currentProvider);
 ethereum.enable();
 var signatario = provedor.getSigner();
@@ -10,10 +10,19 @@ function registrarMudancaStatus() {
     if (textoCampo.length === 8) {
         caixaStatusTx.innerHTML = "Enviando transação...";
         contrato.mudaStatusPagamento(textoCampo)
-        .then( (resultado) => {
-            console.log("registrarMudancaStatus ", resultado);            
-            buscaStatusContrato();
-            caixaStatusTx.innerHTML = "Transação realizada.";
+        .then( (transacao) => {
+            console.log("registrarMudancaStatus - Transacao ", transacao);   
+            caixaStatusTx.innerHTML = "Transação enviada. Aguardando processamento...";
+            transacao.wait()
+            .then( (resultado) => {
+                buscaStatusContrato();
+                caixaStatusTx.innerHTML = "Transação realizada.";
+            })        
+            .catch( (err) => {
+                console.error("registrarMudancaStatus - Aguardando tx ser minerada");
+                console.error(err);
+                caixaStatusTx.innerHTML = "Algo saiu errado: " + err.message;
+            })
         })
         .catch( (err) => {
             console.error("registrarMudancaStatus");
