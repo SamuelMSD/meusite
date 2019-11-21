@@ -1,5 +1,5 @@
 var enderecoContrato = "0x536CE878870Fc1a8E5AEf025E1A473955db6183b";
-var provider = new ethers.providers.Web3Provider(web3.currentProvider);
+var provedor = new ethers.providers.Web3Provider(web3.currentProvider);
 var contrato = new ethers.Contract(enderecoContrato, abiContrato, provedor);
 
 function registrarMudancaStatus() {
