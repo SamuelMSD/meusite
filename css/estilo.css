@@ -22,3 +22,15 @@ body{
     float: left;
     width: 300px;
 }
+
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+}
+
+h1 {
+    font-weight: bold;
+}
+
+span {
+    font-weight: bold;
+}
