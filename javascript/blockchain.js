@@ -1,6 +1,7 @@
 var enderecoContrato = "0x536CE878870Fc1a8E5AEf025E1A473955db6183b";
 var provedor = new ethers.providers.Web3Provider(web3.currentProvider);
-var contrato = new ethers.Contract(enderecoContrato, abiContrato, provedor);
+var signatario = provedor.getSigner();
+var contrato = new ethers.Contract(enderecoContrato, abiContrato, signatario);
 
 function registrarMudancaStatus() {
     var textoCampo = document.frmStatus.txtStatusPagamentoAluguel.value;
